@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block css_scripts %}
+    <link rel="stylesheet" href="./../static/game.css">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Add these for front end JS code -->
+    <input type="hidden" name="numCol" value="{{ numCol }}">
+    <input type="hidden" name="codeLength" value="{{ codeLength }}">
+    <input type="hidden" name="duplicate" value="{{ duplicate }}">
+    <input type="hidden" name="tries" value="{{ rows }}">
+
+    <div id="game-board">
+        <div class="try">
+            {% for col in range(codeLength) %}
+                <div id="{{ 'slot-{}-{}'.format(0, col) }}" class="slot"></div>        
+            {% endfor %}
+            
+            <div class='hint'>
+                {% for row in range(hintRows) %}
+                    {% if row == hintRows-1 and isOdd %}
+                        <div>
+                            <span></span>
+                        </div>
+                    {% else %}
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="color-palette">
+        <!-- Generate color palette here -->
+        {% for value, color in colors.items() %}
+            <div class="palette-color" style="background-color: {{ color }};" data-value="{{ value }}" data-color="{{ color }}"></div>
+        {% endfor %}
+    </div>
+    <hr>
+    <p style="text-align: center;">Hint</p>
+    <div id="game-updates"></div>
+    <div id="hint-display"></div>
+    <hr>
+    <div id="game-ctrls">
+        <button id="check-btn" type="button">Check</button>
+        <button id="hint-btn" type="button">Hint</button>
+    </div>
+
+    <script src="./../static/game.js" defer></script>
+{% endblock %}

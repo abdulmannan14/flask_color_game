@@ -1,0 +1,19 @@
+:root {
+    --max-width: 1024px;
+    --box-padding: 25px;
+    --app-bg-color: white;
+    --primary-button-color: blue;
+    --warning-button-color: yellow;
+    --error-button-color: red;
+    --slot-width: 50px;
+    --slot-height: 50px;
+}
+
+#app-wrapper {
+    margin: 0 auto;
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    padding: var(--box-padding);
+}
+

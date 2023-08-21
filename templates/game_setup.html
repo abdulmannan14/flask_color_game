@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div id="setup_form_container">
+        <form id="setup_form" action="/play" method="POST">
+            <fieldset>
+                <label>Number of columns</label>
+                <input type="number" id="numCol" name="numCol" value="0" min="0" max="6">
+            </fieldset>
+            <fieldset>
+                <label>Length of code</label>
+                <input type="number" name="codeLength" id="codeLength" value="0" min="2" max="6">
+            </fieldset>
+            <fieldset>
+                <label>Allow duplicates?</label>
+                <select id="duplicateSel" name="duplicate">
+                    <option value="yes" default>Yes</option>
+                    <option value="no" default>No</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <button type="submit">Start Game</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src='./../static/setup.js' defer></script>
+
+{% endblock %}

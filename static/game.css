@@ -1,0 +1,107 @@
+#game-board {
+    width : 50%;
+    margin: 0 auto;
+    padding: var(--box-padding);
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid brown;
+}
+
+.try {
+    display: flex;
+    justify-content: start;
+    padding: var(--box-padding);
+    border: 1px solid blue;
+}
+
+.hint {
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+    width: 25%;
+    flex-wrap: wrap;
+}
+
+.hint > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hint > div > span {
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+.slot {
+    width: var(--slot-width);
+    height: var(--slot-height);
+    border-radius: 50%;
+    background-color: rgb(149, 187, 189);
+    margin-right: 20px;
+}
+.slot:last-child {
+    margin-right: 0px;
+}
+
+#color-palette {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.color {
+    width: var(--slot-width);
+    height: var(--slot-height);
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.palette-color {
+    /** Display as rectangular blocks not circles **/
+    width: var(--slot-width);
+    height: var(--slot-height);
+    margin-right: 20px;
+}
+
+#red {
+    background-color: red;
+}
+#blue {
+    background-color: blue;
+}
+
+#game-ctrls {
+    display: flex;
+    justify-content: center;
+}
+
+#game-ctrls > button {
+    margin-right: 20px;
+}
+
+#game-updates {
+    display: flex;
+    justify-content: center;
+    font-size: 16;
+    font-weight: 600;
+    color: #000000;
+}
+
+#hint-display {
+    display: flex;
+    justify-content: center;
+    font-size: 16;
+    font-weight: 600;
+    color: #000000;
+}
+
+.hint-color {
+    width: var(--slot-width);
+    height: var(--slot-height);
+    border-radius: 50%;
+    margin-right: 20px;
+}
